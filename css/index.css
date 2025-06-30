@@ -1,0 +1,51 @@
+:root {
+    --primary-main: hsla(0, 0%, 11%, 1);
+    --primary-grey: hsla(60, 5%, 91%, 1);
+    --primary-white: hsla(0, 0%, 100%, 1);
+    --label-bestseller: hsla(56, 35%, 77%, 1);
+    --label-limited: hsla(293, 35%, 77%, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--primary-white);
+    color: var(--primary-main)
+}
+
+.body-text {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.body-text-large {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.heading-text {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+@media (min-width: 1024px) {
+    .body-text-large {
+        font-size: 2rem;
+    }
+
+    .heading-text {
+        font-size: 4.2rem;
+    }
+}
