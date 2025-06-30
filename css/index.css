@@ -47,6 +47,11 @@ button {
     border: none;
 }
 
+a {
+    text-decoration: none;
+    color: var(--primary-main);
+}
+
 .header {
     padding: 0 16px;
     display: flex;
@@ -114,6 +119,22 @@ button {
         justify-content: space-between;
         padding: 24px 0;
     }
+
+    & .nav__links-list {
+        list-style: none;
+        gap: 42px;
+        display: none;
+    }
+
+    & .nav__links-list--mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    & .nav__links-list-item:hover {
+        text-decoration: underline;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -132,6 +153,10 @@ button {
 
         & .nav__right-side-desktop {
             display: block;
+        }
+        
+        & .nav__links-list {
+            display: flex;
         }
     }
 
