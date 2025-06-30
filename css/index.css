@@ -63,11 +63,18 @@ a {
     padding: 24px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 10;
     background-color: var(--primary-white);
     height: var(--nav-height);
+
+    & .nav__logo-side {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
 
     & .nav__right-side {
         display: block;
@@ -117,6 +124,7 @@ a {
     & .nav__burger-menu-header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 24px 0;
     }
 
