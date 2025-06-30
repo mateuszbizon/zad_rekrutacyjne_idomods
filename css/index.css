@@ -76,6 +76,11 @@ a {
         gap: 12px;
     }
 
+    & .nav__logo-side-extra-text {
+        margin-left: 32px;
+        display: none;
+    }
+
     & .nav__right-side {
         display: flex;
         gap: 8px;
@@ -84,6 +89,8 @@ a {
 
     & .nav__right-side-desktop {
         display: none;
+        align-items: center;
+        gap: 12px;
     }
 
     & .nav__burger-menu {
@@ -169,11 +176,15 @@ a {
         }
 
         & .nav__right-side-desktop {
-            display: block;
+            display: flex;
         }
         
         & .nav__links-list {
             display: flex;
+        }
+
+        & .nav__logo-side-extra-text {
+            display: block;
         }
     }
 
