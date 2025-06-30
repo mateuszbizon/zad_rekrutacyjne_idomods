@@ -71,6 +71,49 @@ button {
     & .nav__right-side-desktop {
         display: none;    
     }
+
+    & .nav__burger-menu {
+        background-color: var(--primary-white);
+        position: fixed;
+        right: 0;
+        top: 0;
+        transform: translateX(100%);
+        height: 100%;
+        width: 290px;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 0 16px 0 32px;
+        z-index: 50;
+        opacity: 0;
+        transition: transform .3s;
+    }
+
+    & .nav__burger-menu.open {
+        opacity: 100;
+        transform: translateX(0);
+    }
+
+    & .nav__burger-menu-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: hsla(0, 0%, 11%, 0.8);
+        z-index: 40;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s;
+    }
+
+    & .nav__burger-menu-overlay.open {
+        opacity: 100;
+        pointer-events: auto;
+    }
+
+    & .nav__burger-menu-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 0;
+    }
 }
 
 @media (min-width: 1024px) {
