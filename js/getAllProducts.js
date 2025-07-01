@@ -38,6 +38,11 @@ export function fetchAllProducts() {
             productItem.appendChild(productImg)
             productsContainer.appendChild(productItem)
         })
+
+        const productBanner = document.createElement("div")
+        productBanner.classList.add("product-banner")
+
+        productsContainer.appendChild(productBanner)
     }
 
     window.openModal = function(idText, image) {
