@@ -1,4 +1,4 @@
-export function fetchAllProducts() {
+export function initProducts() {
 	const productsContainer = document.querySelector(".products__items");
 	const productModal = document.querySelector(".product-modal");
 	const productModalIdText = document.querySelector("#product-modal-id-text");

@@ -1,5 +1,5 @@
 import { initBurgerMenu } from "./burgerMenu.js"
-import { fetchAllProducts } from "./getAllProducts.js"
+import { initProducts } from "./getAllProducts.js"
 
 initBurgerMenu()
-fetchAllProducts()
+initProducts()
