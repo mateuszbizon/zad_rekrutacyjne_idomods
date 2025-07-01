@@ -16,8 +16,6 @@ export function fetchAllProducts() {
     }
 
     function fillProducts(products) {
-        productsContainer.textContent = ""
-
         products.forEach(product => {
             const productIdTextValue = product.id < 10 ? `ID: 0${product.id}` : `ID: ${product.id}`
 
@@ -38,11 +36,6 @@ export function fetchAllProducts() {
             productItem.appendChild(productImg)
             productsContainer.appendChild(productItem)
         })
-
-        const productBanner = document.createElement("div")
-        productBanner.classList.add("product-banner")
-
-        productsContainer.appendChild(productBanner)
     }
 
     window.openModal = function(idText, image) {
