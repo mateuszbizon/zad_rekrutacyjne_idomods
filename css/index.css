@@ -275,6 +275,38 @@ a {
     }
 }
 
+.page-size-box {
+    border: 1px solid var(--primary-grey);
+    border-radius: 6px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & .page-size-box__btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+    }
+
+    & .page-size-box__list {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        list-style-type: none;
+    }
+
+    & .page-size-box__list.open {
+        display: flex;
+    }
+
+    & .page-size-box__list-item {
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
 @media (min-width: 1024px) {
     .body-text-large {
         font-size: 2rem;

@@ -5,7 +5,11 @@ export function fetchAllProducts() {
     const productModalClose = document.querySelector(".product-modal__close")
     const productModalImg = document.querySelector(".product-modal__img")
 
-    const defaultProductsSizePerPage = 14
+    const pageSizeBoxBtn = document.querySelector(".page-size-box__btn")
+    const pageSizeBoxNumberValue = document.querySelector(".page-size-box__number")
+    const pageSizeBoxList = document.querySelector(".page-size-box__list")
+
+    let defaultProductsSizePerPage = 14
     const apiUrl = "https://brandstestowy.smallhost.pl/api/random"
 
     async function fetchProducts(pageSize = defaultProductsSizePerPage) {
@@ -44,9 +48,35 @@ export function fetchAllProducts() {
         productModalImg.src = `${image}`
     }
 
+    function generatePageSizeBoxValues() {
+        const pageSizes = [defaultProductsSizePerPage, 24, 36]
+
+        pageSizeBoxNumberValue.textContent = defaultProductsSizePerPage
+
+        pageSizes.forEach(item => {
+            const pageSizeBoxListItem = document.createElement("li")
+
+            pageSizeBoxListItem.classList.add("page-size-box__list-item")
+            pageSizeBoxListItem.textContent = item
+            pageSizeBoxListItem.addEventListener("click", (e) => {
+                defaultProductsSizePerPage = e.target.textContent
+                pageSizeBoxNumberValue.textContent = e.target.textContent
+                pageSizeBoxList.classList.remove("open")
+            })
+
+            pageSizeBoxList.appendChild(pageSizeBoxListItem)
+        })
+
+    }
+
     productModalClose.addEventListener("click", () => {
         productModal.close()
     })
 
+    pageSizeBoxBtn.addEventListener("click", () => {
+        pageSizeBoxList.classList.toggle("open")
+    })
+
+    generatePageSizeBoxValues()
     fetchProducts()
 }
