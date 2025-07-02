@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 </head>
 <body>
     <header class="header">
@@ -62,6 +66,92 @@
     </header>
 
     <main>
+        <section class="featured">
+            <div class="featured__heading">
+                <p class="body-text">featured products</p>
+
+                <h2 class="heading-text">Browse featured</h2>
+            </div>
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="featured__wrapper">
+                            <div class="featured__img-box">
+                                <img class="featured__img" src="https://brandstestowy.smallhost.pl/KURTKA_04.png" alt="">
+                                <span class="featured__img-text featured__img-text--bestseller body-text">bestseller</span>
+                                <img class="featured__img-icon" src="assets/heart.png" alt="Heart icon">
+                            </div>
+
+                            <div class="featured__text-box">
+                                <p class="body-text-large">Dark blue alpine climbing jacket</p>
+                                <p class="body-text">€300,00 eur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="featured__wrapper">
+                            <div class="featured__img-box">
+                                <img class="featured__img" src="https://brandstestowy.smallhost.pl/KURTKA_03.png" alt="">
+                                <span class="featured__img-text featured__img-text--limited-edition body-text">limited edition</span>
+                                <img class="featured__img-icon" src="assets/heart.png" alt="Heart icon">
+                            </div>
+
+                            <div class="featured__text-box">
+                                <p class="body-text-large">Dark blue alpine climbing jacket</p>
+                                <p class="body-text">€300,00 eur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="featured__wrapper">
+                            <div class="featured__img-box">
+                                <img class="featured__img" src="https://brandstestowy.smallhost.pl/KURTKA_02.png" alt="">
+                                <img class="featured__img-icon" src="assets/heart.png" alt="Heart icon">
+                            </div>
+
+                            <div class="featured__text-box">
+                                <p class="body-text-large">Dark blue alpine climbing jacket</p>
+                                <p class="body-text">€300,00 eur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="featured__wrapper">
+                            <div class="featured__img-box">
+                                <img class="featured__img" src="https://brandstestowy.smallhost.pl/KURTKA_04.png" alt="">
+                                <span class="featured__img-text featured__img-text--bestseller body-text">bestseller</span>
+                                <img class="featured__img-icon" src="assets/heart.png" alt="Heart icon">
+                            </div>
+
+                            <div class="featured__text-box">
+                                <p class="body-text-large">Dark blue alpine climbing jacket</p>
+                                <p class="body-text">€300,00 eur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="featured__wrapper">
+                            <div class="featured__img-box">
+                                <img class="featured__img" src="https://brandstestowy.smallhost.pl/KURTKA_02.png" alt="">
+                                <span class="featured__img-text featured__img-text--limited-edition body-text">limited edition</span>
+                                <img class="featured__img-icon" src="assets/heart.png" alt="Heart icon">
+                            </div>
+
+                            <div class="featured__text-box">
+                                <p class="body-text-large">Dark blue alpine climbing jacket</p>
+                                <p class="body-text">€300,00 eur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="swiper-next-btn">
+                    <img src="assets/chevron_right.png" alt="Chevron right icon">
+                </button>
+            </div>
+        </section>
+
         <section class="products">
             <div class="products__header">
                 <span class="body-text">number of products per page</span>
@@ -111,6 +201,8 @@
         </dialog>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/swiper.js"></script>
 </body>
 </html>
