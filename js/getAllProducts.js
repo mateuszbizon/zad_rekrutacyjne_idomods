@@ -1,25 +1,25 @@
+import { isScrolledIntoView } from "./utils.js";
+
 const productsContainer = document.querySelector(".products__items");
 const productModal = document.querySelector(".product-modal");
 const productModalIdText = document.querySelector("#product-modal-id-text");
 const productModalClose = document.querySelector(".product-modal__close");
 const productModalImg = document.querySelector(".product-modal__img");
 
-const pageSizeBoxBtn = document.querySelector(".page-size-box__btn");
-const pageSizeBoxNumberValue = document.querySelector(".page-size-box__number");
-const pageSizeBoxList = document.querySelector(".page-size-box__list");
-
 const loadMoreProductsContainer = document.querySelector("#load-more-products");
 
-let pageSize = 14;
-let pageNumber = 1;
+export const pageConfig = {
+    pageSize: 14,
+    pageNumber: 1
+}
 let isFetching = false;
 const apiUrl = "https://brandstestowy.smallhost.pl/api/random";
 
-async function fetchProducts(pageSize, pageNumberProp) {
+async function fetchProducts(pageSize, pageNumber) {
     isFetching = true;
 
     const response = await fetch(
-        `${apiUrl}?pageSize=${pageSize}&pageNumber=${pageNumberProp}`
+        `${apiUrl}?pageSize=${pageSize}&pageNumber=${pageNumber}`
     );
     const productsData = await response.json();
 
@@ -57,43 +57,13 @@ window.openModal = function (idText, image) {
     productModalImg.src = `${image}`;
 };
 
-function generatePageSizeBoxValues() {
-    const pageSizes = [pageSize, 24, 36];
-
-    pageSizeBoxNumberValue.textContent = pageSize;
-
-    pageSizes.forEach(item => {
-        const pageSizeBoxListItem = document.createElement("li");
-
-        pageSizeBoxListItem.classList.add("page-size-box__list-item");
-        pageSizeBoxListItem.textContent = item;
-        pageSizeBoxListItem.addEventListener("click", (e) => {
-            pageSize = e.target.textContent;
-            pageSizeBoxNumberValue.textContent = e.target.textContent;
-            pageSizeBoxList.classList.remove("open");
-        });
-
-        pageSizeBoxList.appendChild(pageSizeBoxListItem);
-    });
-}
-
-function isScrolledIntoView(el) {
-    const rect = el.getBoundingClientRect();
-    const elemTop = rect.top;
-    const elemBottom = rect.bottom;
-
-    const isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
-
-    return isVisible;
-}
-
 function checkToLoadMoreProducts() {
     const isLoadMoreVisible = isScrolledIntoView(loadMoreProductsContainer);
 
     if (isLoadMoreVisible && !isFetching) {
-        pageNumber++;
+        pageConfig.pageNumber++;
 
-        fetchProducts(pageSize, pageNumber);
+        fetchProducts(pageConfig.pageSize, pageConfig.pageNumber);
     }
 }
 
@@ -101,13 +71,8 @@ productModalClose.addEventListener("click", () => {
     productModal.close();
 });
 
-pageSizeBoxBtn.addEventListener("click", () => {
-    pageSizeBoxList.classList.toggle("open");
-});
-
 window.addEventListener("scroll", () => {
     checkToLoadMoreProducts();
 });
 
-generatePageSizeBoxValues();
-fetchProducts(pageSize, pageNumber);
+fetchProducts(pageConfig.pageSize, pageConfig.pageNumber);
